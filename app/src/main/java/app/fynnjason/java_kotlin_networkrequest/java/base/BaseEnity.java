@@ -1,4 +1,4 @@
-package app.fynnjason.java_kotlin_networkrequest.java;
+package app.fynnjason.java_kotlin_networkrequest.java.base;
 
 /**
  * Created by FynnJason.

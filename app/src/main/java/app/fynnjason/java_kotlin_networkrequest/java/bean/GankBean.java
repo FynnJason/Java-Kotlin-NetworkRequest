@@ -1,4 +1,4 @@
-package app.fynnjason.java_kotlin_networkrequest.java;
+package app.fynnjason.java_kotlin_networkrequest.java.bean;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import java.util.List;
  * Des：Gank数据类
  */
 
-public class GankInfo {
+public class GankBean {
 
     private List<ResultsBean> results;
 
