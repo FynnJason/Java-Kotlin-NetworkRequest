@@ -55,4 +55,6 @@ public class RequestService implements ApiService {
     public Observable<BaseEnity<GankBean>> allGank() {
         return sApiService.allGank();
     }
+
+
 }
