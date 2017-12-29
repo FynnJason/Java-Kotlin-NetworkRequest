@@ -12,7 +12,7 @@ import app.fynnjason.java_kotlin_networkrequest.java.bean.GankBean;
 
 /**
  * Created by FynnJason.
- * Des：
+ * Des：recyclerview adapter
  */
 
 public class DataAdapter extends BaseQuickAdapter<GankBean,BaseViewHolder> {

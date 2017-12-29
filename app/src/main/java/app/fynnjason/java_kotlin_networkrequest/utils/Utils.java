@@ -4,6 +4,10 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+/**
+ * Created by FynnJason
+ * Des：other tools
+ */
 
 public class Utils {
     /**

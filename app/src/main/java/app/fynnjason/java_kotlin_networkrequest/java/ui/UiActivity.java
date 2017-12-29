@@ -2,18 +2,17 @@ package app.fynnjason.java_kotlin_networkrequest.java.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-
 
 import java.util.List;
 
 import app.fynnjason.java_kotlin_networkrequest.R;
 import app.fynnjason.java_kotlin_networkrequest.java.adapter.DataAdapter;
 import app.fynnjason.java_kotlin_networkrequest.java.api.RequestService;
-
+import app.fynnjason.java_kotlin_networkrequest.java.base.BaseActivity;
+import app.fynnjason.java_kotlin_networkrequest.java.base.BaseEnity;
 import app.fynnjason.java_kotlin_networkrequest.java.base.BaseObserver;
 import app.fynnjason.java_kotlin_networkrequest.java.bean.GankBean;
 
@@ -23,7 +22,7 @@ import app.fynnjason.java_kotlin_networkrequest.java.bean.GankBean;
  * Des：界面
  */
 
-public class UiActivity extends AppCompatActivity {
+public class UiActivity extends BaseActivity {
     private RecyclerView recyclerView;
 
     @Override
@@ -35,6 +34,7 @@ public class UiActivity extends AppCompatActivity {
 
 
         RequestService.getInstance().allGank()
+                .compose(this.<BaseEnity<List<GankBean>>>compose())
                 .subscribe(new BaseObserver<List<GankBean>>() {
                     @Override
                     public void onSuccess(List<GankBean> gankBeans) {
