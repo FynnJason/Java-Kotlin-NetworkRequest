@@ -2,7 +2,6 @@ package app.fynnjason.java_kotlin_networkrequest.java.base;
 
 import android.support.v7.app.AppCompatActivity;
 
-import app.fynnjason.java_kotlin_networkrequest.App;
 import app.fynnjason.java_kotlin_networkrequest.utils.ToastUtils;
 import app.fynnjason.java_kotlin_networkrequest.utils.Utils;
 import io.reactivex.Observable;
@@ -30,7 +29,7 @@ public class BaseActivity extends AppCompatActivity {
                         .doOnSubscribe(new Consumer<Disposable>() {
                             @Override
                             public void accept(Disposable disposable) throws Exception {
-                                if (!Utils.isNetworkAvailable(App.Companion.getInstance())) {
+                                if (!Utils.isNetworkAvailable()) {
                                     ToastUtils.show("网络连接断开！");
                                 }
                             }
