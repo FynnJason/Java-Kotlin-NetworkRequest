@@ -11,6 +11,7 @@ import app.fynnjason.java_kotlin_networkrequest.R;
 import app.fynnjason.java_kotlin_networkrequest.java.api.RequestService;
 import app.fynnjason.java_kotlin_networkrequest.java.base.BaseEnity;
 import app.fynnjason.java_kotlin_networkrequest.java.bean.GankBean;
+import app.fynnjason.java_kotlin_networkrequest.utils.Utils;
 import io.reactivex.Observer;
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -31,6 +32,14 @@ public class UiActivity extends AppCompatActivity {
 
         RequestService.getInstance().allGank()
                 .subscribeOn(Schedulers.io())
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable) throws Exception {
+                        if (!Utils.isNetworkAvailable(UiActivity.this)) {
+                            Log.e("UiActivity", "accept：没开网！");
+                        }
+                    }
+                })
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<BaseEnity<List<GankBean>>>() {
                     @Override
