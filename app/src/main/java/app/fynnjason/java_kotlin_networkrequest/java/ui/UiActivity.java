@@ -14,7 +14,9 @@ import app.fynnjason.java_kotlin_networkrequest.R;
 import app.fynnjason.java_kotlin_networkrequest.java.adapter.DataAdapter;
 import app.fynnjason.java_kotlin_networkrequest.java.api.RequestService;
 import app.fynnjason.java_kotlin_networkrequest.java.base.BaseEnity;
+import app.fynnjason.java_kotlin_networkrequest.java.base.BaseObserver;
 import app.fynnjason.java_kotlin_networkrequest.java.bean.GankBean;
+import app.fynnjason.java_kotlin_networkrequest.utils.ToastUtils;
 import app.fynnjason.java_kotlin_networkrequest.utils.Utils;
 import io.reactivex.Observer;
 import io.reactivex.Scheduler;
@@ -38,38 +40,28 @@ public class UiActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+
         RequestService.getInstance().allGank()
                 .subscribeOn(Schedulers.io())
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
                         if (!Utils.isNetworkAvailable(UiActivity.this)) {
-                            Toast.makeText(UiActivity.this, "没开网！", Toast.LENGTH_SHORT).show();
+                            ToastUtils.show("没开网");
                         }
                     }
                 })
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<BaseEnity<List<GankBean>>>() {
+                .subscribe(new BaseObserver<List<GankBean>>() {
                     @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(BaseEnity<List<GankBean>> bean) {
-                        List<GankBean> list = bean.getResults();
-                        DataAdapter adapter = new DataAdapter(list);
+                    public void onSuccess(List<GankBean> gankBeans) {
+                        DataAdapter adapter = new DataAdapter(gankBeans);
                         recyclerView.setAdapter(adapter);
                     }
 
                     @Override
-                    public void onError(Throwable e) {
-                        Log.e("UiActivity", "onError：" + e.getMessage());
-                    }
-
-                    @Override
-                    public void onComplete() {
-
+                    public void onFail(Throwable e) {
+                        Log.e("UiActivity", "onFail：" + e.getMessage());
                     }
                 });
     }
