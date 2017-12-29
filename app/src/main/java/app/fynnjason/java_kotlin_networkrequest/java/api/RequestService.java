@@ -3,6 +3,7 @@ package app.fynnjason.java_kotlin_networkrequest.java.api;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import app.fynnjason.java_kotlin_networkrequest.java.base.BaseEnity;
@@ -52,9 +53,8 @@ public class RequestService implements ApiService {
 
 
     @Override
-    public Observable<BaseEnity<GankBean>> allGank() {
+    public Observable<BaseEnity<List<GankBean>>> allGank() {
         return sApiService.allGank();
     }
-
 
 }

@@ -7,10 +7,25 @@
     android:orientation="vertical"
     tools:context="app.fynnjason.java_kotlin_networkrequest.MainActivity">
 
-    <TextView
-        android:id="@+id/text_view"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btn_java"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_margin="16dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Use Java methods for network requests\n使用Java方式进行网络请求"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:textSize="14sp" />
 
+    <Button
+        android:id="@+id/btn_kotlin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Use Kotlin methods for network requests\n使用Kotlin方式进行网络请求"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:textSize="14sp" />
 </LinearLayout>
