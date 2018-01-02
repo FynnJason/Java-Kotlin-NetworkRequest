@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".java.ui.UiActivity"></activity>
+        <activity android:name=".kotlin.ui.UiActivity" />
     </application>
 
 </manifest>
