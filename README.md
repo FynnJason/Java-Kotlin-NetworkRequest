@@ -1,6 +1,6 @@
 Samle
 =====
-[]("https://github.com/FynnJason/Java-Kotlin-NetworkRequest/blob/master/layout_pic.jpg")
+![](https://github.com/FynnJason/Java-Kotlin-NetworkRequest/blob/master/layout_pic.jpg)
 
 Log
 ===
