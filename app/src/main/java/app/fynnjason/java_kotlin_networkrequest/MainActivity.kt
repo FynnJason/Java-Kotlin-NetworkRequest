@@ -14,6 +14,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btn_java.setOnClickListener { startActivity(Intent(this, UiActivity::class.java)) }
-        btn_kotlin.setOnClickListener {  }
+        btn_kotlin.setOnClickListener { startActivity(Intent(this, app.fynnjason.java_kotlin_networkrequest.kotlin.ui.UiActivity::class.java)) }
     }
 }

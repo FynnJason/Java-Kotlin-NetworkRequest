@@ -1,4 +1,4 @@
-package app.fynnjason.java_kotlin_networkrequest.kotlin
+package app.fynnjason.java_kotlin_networkrequest.kotlin.api
 
 import app.fynnjason.java_kotlin_networkrequest.java.base.BaseEnity
 import app.fynnjason.java_kotlin_networkrequest.java.bean.GankBean
