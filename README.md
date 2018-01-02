@@ -1,5 +1,10 @@
 Log
 ===
+18.1.2
+- 完成Kotlin的api部分
+- 测试通过
+- 其他
+
 17.12.29 
 - Java实现retorfit2+rxjava2
 - 优化部分实现方式
