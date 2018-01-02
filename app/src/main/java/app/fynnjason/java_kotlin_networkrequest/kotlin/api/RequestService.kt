@@ -1,9 +1,8 @@
-package app.fynnjason.java_kotlin_networkrequest.kotlin
+package app.fynnjason.java_kotlin_networkrequest.kotlin.api
 
 import app.fynnjason.java_kotlin_networkrequest.App
 import app.fynnjason.java_kotlin_networkrequest.java.base.BaseEnity
 import app.fynnjason.java_kotlin_networkrequest.java.bean.GankBean
-import app.fynnjason.java_kotlin_networkrequest.kotlin.api.ApiService
 import app.fynnjason.java_kotlin_networkrequest.utils.Utils
 import io.reactivex.Observable
 import okhttp3.Cache
@@ -20,7 +19,7 @@ import java.io.File
  * Des：request
  */
 class RequestService private constructor() : ApiService {
-    override fun allGank(): Observable<BaseEnity<List<GankBean>>> = apiService.allGank()
+    override fun allGank(): Observable<BaseEnity<List<GankBean>>> = apiService!!.allGank()
 
     companion object {
         fun getInstance() = Holder.INSTANCE
